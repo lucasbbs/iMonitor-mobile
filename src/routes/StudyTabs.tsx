@@ -43,11 +43,11 @@ function StudyTabs() {
         name='TeacherList'
         component={TeacherList}
         options={{
-          tabBarLabel: 'Proffys',
+          tabBarLabel: 'Monitores',
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name='ios-easel'
-              color={focused ? '#8257e5' : color}
+              color={focused ? '#004C4C' : color}
               size={size}
             />
           ),
@@ -61,7 +61,7 @@ function StudyTabs() {
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name='ios-heart'
-              color={focused ? '#8257e5' : color}
+              color={focused ? '#004C4C' : color}
               size={size}
             />
           ),

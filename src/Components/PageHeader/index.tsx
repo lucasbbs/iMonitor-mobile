@@ -1,17 +1,20 @@
 import React, { ReactNode } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import backIcons from '../../assets/images/icons/back.png';
+import BackIcons from '../../assets/images/icons/back.svg';
+import Logo from '../../assets/images/Imonitor.svg';
 import logoImg from '../../assets/images/logo.png';
 import styles from './styles';
 
 interface PageHeaderProps {
-  title: string;
+  title?: string;
   headerRight?: ReactNode;
+  topTitle: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
-  title,
+  topTitle,
+  title = null,
   children,
   headerRight,
 }) => {
@@ -25,15 +28,19 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     <View style={styles.container}>
       <View style={styles.topBar}>
         <TouchableOpacity onPress={handleGoBack}>
-          <Image source={backIcons} resizeMode='contain' />
+          <BackIcons width={30} />
         </TouchableOpacity>
-        <Image source={logoImg} resizeMode='contain' />
+        <Text style={styles.screenTitle}>{topTitle}</Text>
+        <Logo width={80} height={70} />
       </View>
-      <View style={styles.header}>
-        <Text style={styles.title}>{title}</Text>
-        {headerRight}
-      </View>
-
+      {title && (
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.title}>{title}</Text>
+            {headerRight}
+          </View>
+        </View>
+      )}
       {children}
     </View>
   );

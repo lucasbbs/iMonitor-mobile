@@ -18,9 +18,9 @@ export function GiveClasses() {
         style={styles.content}
         resizeMode='contain'
       >
-        <Text style={styles.title}>Quer ser um proffy?</Text>
+        <Text style={styles.title}>Quer ser um Monitor?</Text>
         <Text style={styles.description}>
-          Para começar, você precisa se cadastrar como professor na nossa
+          Para começar, você precisa se cadastrar como monitor na nossa
           plataforma web.
         </Text>
       </ImageBackground>

@@ -2,19 +2,21 @@ import { Poppins_400Regular } from '@expo-google-fonts/poppins';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f0f7',
-  },
-  teacherList: {
-    marginTop: -40,
-  },
   searchForm: {
+    paddingHorizontal: 40,
     marginBottom: 24,
   },
   label: {
     color: '#d4c2ff',
     fontFamily: 'Poppins_400Regular',
+  },
+  weekDay: { backgroundColor: 'white', fontFamily: 'Poppins_400Regular' },
+  timeInput: {
+    fontFamily: 'Poppins_400Regular',
+    paddingTop: 9,
+    paddingHorizontal: 16,
+    height: 54,
+    backgroundColor: 'white',
   },
   input: {
     height: 54,
@@ -28,13 +30,14 @@ const styles = StyleSheet.create({
   inputGroup: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 10,
   },
   inputBlock: {
     width: '48%',
   },
 
   submitButton: {
-    backgroundColor: '#04d361',
+    backgroundColor: '#66B2B2',
 
     height: 56,
     borderRadius: 8,
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   submitButtonText: {
-    color: '#fff',
+    color: '#000',
     fontFamily: 'Archivo_700Bold',
     fontSize: 16,
   },

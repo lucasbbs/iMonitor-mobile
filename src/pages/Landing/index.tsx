@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Image, Text, View, TouchableOpacity } from 'react-native';
 
+import LottieView from 'lottie-react-native';
+import landingImg from '../../assets/landingPage.json';
+import { useAuth } from '../../hooks/auth';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import landingImg from '../../assets/images/landing.png';
-import studyIcon from '../../assets/images/icons/study.png';
-import giveClassesIcon from '../../assets/images/icons/give-classes.png';
+import StudySvg from '../../assets/images/study.svg';
+import GiveClassesSvg from '../../assets/images/giveClasses.svg';
+import EmojiHeartSvg from '../../assets/images/emojiHeart.svg';
+import PowerSvg from '../../assets/images/power.svg';
 import heartIcon from '../../assets/images/icons/heart.png';
 import styles from './styles';
 import api from '../../services/api';
 
 export function Landing() {
+  const { user, signOut } = useAuth();
+  console.log(user);
   const [totalConnections, setTotalConnections] = useState(0);
 
   useFocusEffect(() => {
@@ -19,44 +25,71 @@ export function Landing() {
     });
   });
 
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
   function handleNavigateToGiveClassesPage() {
-    navigation.navigate({ name: 'GiveClasses', key: 'GiveClasses' });
+    navigate({ name: 'GiveClasses', key: 'GiveClasses' });
   }
   function handleNavigateToStudyPage() {
-    navigation.navigate('Study');
+    navigate('Study');
   }
-
   return (
     <View style={styles.container}>
-      <Image source={landingImg} style={styles.banner} />
-
-      <Text style={styles.title}>
-        Seja bem vindo,{'\n'}
-        <Text style={styles.titleBold}>O que deseja fazer?</Text>
-      </Text>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity
-          onPress={handleNavigateToStudyPage}
-          style={[styles.button, styles.buttonPrimary]}
-        >
-          <Image source={studyIcon} />
-          <Text style={styles.buttonText}>Estudar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={handleNavigateToGiveClassesPage}
-          style={[styles.button, styles.buttonSecondary]}
-        >
-          <Image source={giveClassesIcon} />
-          <Text style={styles.buttonText}>Dar Aulas</Text>
-        </TouchableOpacity>
+      <View style={styles.header}>
+        <View style={styles.containerHeaderProfile}>
+          <TouchableOpacity
+            onPress={() => navigate('Profile')}
+            style={{ flexDirection: 'row', alignItems: 'center' }}
+          >
+            <Image
+              style={styles.avatar}
+              height={48}
+              width={48}
+              source={{ uri: user.avatar }}
+            />
+            <View style={styles.userNameContainer}>
+              <Text style={styles.userName}>{user.name}</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={signOut}>
+            <PowerSvg width={40} />
+          </TouchableOpacity>
+        </View>
+        <LottieView
+          style={{ width: 400, alignSelf: 'center' }}
+          resizeMode='contain'
+          source={landingImg}
+          autoPlay
+          loop
+        />
       </View>
+      <View style={styles.body}>
+        <Text style={styles.title}>
+          Seja bem vindo,{'\n'}
+          <Text style={styles.titleBold}>O que deseja fazer?</Text>
+        </Text>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            onPress={handleNavigateToStudyPage}
+            style={[styles.button, styles.buttonPrimary]}
+          >
+            <StudySvg width={60} />
+            <Text style={styles.buttonText}>Estudar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={handleNavigateToGiveClassesPage}
+            style={[styles.button, styles.buttonSecondary]}
+          >
+            <GiveClassesSvg width={60} />
+            <Text style={styles.buttonText}>Dar Monitorias</Text>
+          </TouchableOpacity>
+        </View>
 
-      <Text style={styles.totalConnections}>
-        Total de {totalConnections} conexões já realizadas{' '}
-        <Image source={heartIcon} />
-      </Text>
+        <Text style={styles.totalConnections}>
+          Total de {totalConnections} conexões já realizadas{' '}
+          <EmojiHeartSvg width={14} />
+        </Text>
+      </View>
     </View>
   );
 }
