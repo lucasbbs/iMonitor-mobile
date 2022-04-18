@@ -11,7 +11,7 @@ export function Favorites() {
 
   const loadFavorites = async () => {
     try {
-      const value = await AsyncStorage.getItem('@favorites_proffy');
+      const value = await AsyncStorage.getItem('@favorites_monitor');
       if (value !== null) {
         setFavorites(JSON.parse(value));
       }

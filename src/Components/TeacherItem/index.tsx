@@ -38,7 +38,7 @@ export const TeacherItem: React.FC<TeacherItemProps> = ({
   }
 
   async function handleToggleFavorited() {
-    const favorites = await AsyncStorage.getItem('@favorites_proffy');
+    const favorites = await AsyncStorage.getItem('@favorites_monitor');
     let favoritesArray = [];
     if (favorites) {
       favoritesArray = JSON.parse(favorites);
@@ -54,7 +54,7 @@ export const TeacherItem: React.FC<TeacherItemProps> = ({
       setIsFavorited(true);
     }
     await AsyncStorage.setItem(
-      '@favorites_proffy',
+      '@favorites_monitor',
       JSON.stringify(favoritesArray)
     );
   }

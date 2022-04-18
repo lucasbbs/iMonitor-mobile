@@ -68,7 +68,7 @@ export function TeacherList() {
 
   const loadFavorites = async () => {
     try {
-      const value = await AsyncStorage.getItem('@favorites_proffy');
+      const value = await AsyncStorage.getItem('@favorites_monitor');
       if (value !== null) {
         const favoritedTeachersIds = JSON.parse(value).map(
           (teacher: Teacher) => teacher.user_id
