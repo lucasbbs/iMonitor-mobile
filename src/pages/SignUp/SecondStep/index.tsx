@@ -31,11 +31,11 @@ export function SecondStep() {
   const handleConfirm = () => {
     try {
       const data = {
-        name: name + surname,
+        name: `${name} ${surname}`,
         email,
         password,
-        bio: 'Eu sou o Breno',
-        whatsapp: '5561983499994',
+        bio: ' ',
+        whatsapp: '55',
       };
       api.post('users', data);
       navigate('Confirmation', {

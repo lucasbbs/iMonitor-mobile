@@ -28,7 +28,7 @@ export function Landing() {
   const { navigate } = useNavigation();
 
   function handleNavigateToGiveClassesPage() {
-    navigate({ name: 'GiveClasses', key: 'GiveClasses' });
+    navigate('GiveClasses');
   }
   function handleNavigateToStudyPage() {
     navigate('Study');

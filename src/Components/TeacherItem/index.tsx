@@ -10,7 +10,7 @@ import styles from './styles';
 import api from '../../services/api';
 
 export interface Teacher {
-  id: number;
+  user_id: number;
   avatar: string;
   bio: string;
   cost: number;
@@ -30,8 +30,9 @@ export const TeacherItem: React.FC<TeacherItemProps> = ({
 }) => {
   const [isFavorited, setIsFavorited] = useState(favorited);
   function handleLinkToWhatsApp() {
+    console.log(teacher);
     api.post('connections', {
-      user_id: teacher.id,
+      user_id: teacher.user_id,
     });
     Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`);
   }
@@ -44,7 +45,7 @@ export const TeacherItem: React.FC<TeacherItemProps> = ({
     }
     if (isFavorited) {
       const favoritesIndex = favoritesArray.findIndex(
-        (teacherItem: Teacher) => teacherItem.id === teacher.id
+        (teacherItem: Teacher) => teacherItem.user_id === teacher.user_id
       );
       favoritesArray.splice(favoritesIndex, 1);
       setIsFavorited(false);

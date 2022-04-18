@@ -9,6 +9,7 @@ import {
   Image,
   Text,
   FlatList,
+  ScrollView,
 } from 'react-native';
 
 import backIcons from '../../assets/images/icons/back.png';
@@ -22,16 +23,19 @@ import { Button } from '../../components/Button';
 import { PasswordInput } from '../../components/PasswordInput';
 import { useAuth } from '../../hooks/auth';
 import styles from './styles';
-import { SubjectGiveClasses } from '../../components/SubjectGiveClasses';
+// import { SubjectGiveClasses } from '../../components/SubjectGiveClasses';
 import PageHeader from '../../components/PageHeader';
+import api from '../../services/api';
 
 export function Profile() {
   const { user, signOut, updateUser } = useAuth();
+  console.log(user);
 
   const [option, setOption] = useState<'dataEdit' | 'passwordEdit'>('dataEdit');
   const [avatar, setAvatar] = useState(user.avatar);
   const [name, setName] = useState(user.name);
-  const [driverLicense, setDriverLicense] = useState(user.driver_license);
+  const [whatsapp, setWhatsapp] = useState(user.whatsapp);
+  const [bio, setBio] = useState(user.bio);
 
   const navigation = useNavigation();
 
@@ -71,21 +75,29 @@ export function Profile() {
   const handleProfileUpdate = async () => {
     try {
       const schema = Yup.object().shape({
-        driverLicense: Yup.string().required('CNH é obrigatória'),
+        driverLicense: Yup.string().required('Bio é obrigatória'),
         name: Yup.string().required('nome é obrigatório'),
       });
 
-      const data = { name, driverLicense };
+      const data = { name, driverLicense: bio };
       await schema.validate(data);
-
+      api.put(`/users/${user.id}`, {
+        name,
+        bio,
+        avatar,
+        whatsapp,
+      });
       await updateUser({
         id: user.id,
         user_id: user.id,
         email: user.email,
         name,
-        driver_license: driverLicense,
+        bio,
         avatar,
         token: user.token,
+        isMonitor: user.isMonitor,
+        classes: user.classes,
+        whatsapp,
       });
       Alert.alert('Perfil atualizado');
     } catch (error) {
@@ -95,7 +107,7 @@ export function Profile() {
         Alert.alert('Não foi possível atualizar as informações do seu perfil');
     }
   };
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  // const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <KeyboardAvoidingView behavior='position' enabled>
@@ -148,7 +160,7 @@ export function Profile() {
                     styles.optionTitle,
                     {
                       marginRight: 15,
-                      color: option === 'dataEdit' ? '#800020' : '#999',
+                      color: option === 'dataEdit' ? '#006666' : '#999',
                     },
                   ]}
                   active={option === 'dataEdit'}
@@ -166,7 +178,7 @@ export function Profile() {
                     styles.optionTitle,
                     {
                       marginRight: 15,
-                      color: option === 'passwordEdit' ? '#800020' : '#999',
+                      color: option === 'passwordEdit' ? '#006666' : '#999',
                     },
                   ]}
                   active={option === 'passwordEdit'}
@@ -178,20 +190,10 @@ export function Profile() {
                 style={styles.option}
                 active={option === 'dataEdit'}
                 onPress={() => handleOptionChange('monitorias')}
-              >
-                <Text
-                  style={[
-                    styles.optionTitle,
-                    { color: option === 'monitorias' ? '#800020' : '#999' },
-                  ]}
-                  active={option === 'Dar monitorias'}
-                >
-                  Dar monitorias
-                </Text>
-              </TouchableOpacity>
+              ></TouchableOpacity>
             </View>
             {option === 'dataEdit' ? (
-              <View style={[styles.section, { height: 254 }]}>
+              <ScrollView style={[styles.section, { height: 264 }]}>
                 <Input
                   iconName='user'
                   defaultValue={user.name}
@@ -205,50 +207,30 @@ export function Profile() {
                   editable={false}
                 />
                 <Input
-                  iconName='credit-card'
-                  defaultValue={user.driver_license}
-                  placeholder='CNH'
+                  iconName='phone'
+                  defaultValue={user.whatsapp}
+                  onChangeText={setWhatsapp}
+                  placeholder='Whatsapp'
                   keyboardType='numeric'
-                  onChangeText={setDriverLicense}
                 />
-              </View>
-            ) : option === 'monitorias' ? (
-              <View
-                style={{
-                  height: '57%',
-                  // marginBottom: 59,
-                }}
-              >
-                <FlatList
-                  data={[
-                    { name: 'Cálculo 1', value: '0' },
-                    { name: 'Cálculo 2', value: '1' },
-                    { name: 'Cálculo 3', value: '2' },
-                    { name: 'Física 1', value: '3' },
-                    { name: 'Física 2', value: '4' },
-                    { name: 'Física 3', value: '5' },
-                    { name: 'Álgebra Linear', value: '6' },
-                    {
-                      name: 'Algoritmos e Programação de Computadores',
-                      value: '7',
-                    },
-                  ]}
-                  keyExtractor={(item) => item.value}
-                  renderItem={({ item }) => (
-                    <SubjectGiveClasses name={item.name} />
-                  )}
+                <Input
+                  defaultValue={user.bio}
+                  placeholder='Bio'
+                  multiline={true}
+                  height={100}
+                  onChangeText={setBio}
                 />
-              </View>
+              </ScrollView>
             ) : (
-              <View style={{ height: 254 }}>
+              <View style={{ height: 264 }}>
                 <PasswordInput iconName='lock' placeholder='Senha Atual' />
                 <PasswordInput iconName='lock' placeholder='Nova senha' />
                 <PasswordInput iconName='lock' placeholder='Repetir senha' />
               </View>
             )}
             <Button
-              color='#DC310B'
-              style={{ position: 'absolute', bottom: 0 }}
+              color='#006666'
+              style={{}}
               title='Salvar alterações'
               onPress={handleProfileUpdate}
             />

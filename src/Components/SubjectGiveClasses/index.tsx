@@ -10,6 +10,7 @@ import { SubjectGiveClassesItem } from '../SubjectGiveClassesItem';
 
 interface Props {
   name: string;
+  onDelete?: () => {};
 }
 interface ClassProps {
   id: number;
@@ -17,28 +18,28 @@ interface ClassProps {
   initialToTime: string;
   initialWeekDay: string;
 }
-export function SubjectGiveClasses({ name }: Props) {
+export function SubjectGiveClasses({ name, onDelete }: Props) {
   const [classes, setClasses] = useState<ClassProps[]>([
     {
-      id: 1,
+      id: 0,
       initialFromTime: '08:00',
       initialToTime: '14:00',
       initialWeekDay: '0',
     },
     {
-      id: 2,
+      id: 1,
       initialFromTime: '08:00',
       initialToTime: '14:00',
       initialWeekDay: '1',
     },
     {
-      id: 3,
+      id: 2,
       initialFromTime: '08:00',
       initialToTime: '14:00',
       initialWeekDay: '2',
     },
     {
-      id: 4,
+      id: 3,
       initialFromTime: '08:00',
       initialToTime: '14:00',
       initialWeekDay: '3',
@@ -51,18 +52,18 @@ export function SubjectGiveClasses({ name }: Props) {
         style={{
           borderBottomWidth: 2,
           borderBottomColor: '#333',
-          height: 30,
+          height: 40,
         }}
       >
         <TouchableOpacity
           style={{
-            alignItems: 'center',
+            alignItems: 'flex-start',
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}
           onPress={() => setIsCollapsed(!isCollapsed)}
         >
-          <Text>{name}</Text>
+          <Text style={{ alignSelf: 'center' }}>{name}</Text>
           <Feather name='plus' size={20} color='black' />
         </TouchableOpacity>
       </View>

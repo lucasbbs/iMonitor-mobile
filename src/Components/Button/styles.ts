@@ -11,8 +11,9 @@ interface ButtonTextProps {
 }
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    padding: 19,
+    marginHorizontal: 20,
+    width: 'auto',
+    padding: 17,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'red',

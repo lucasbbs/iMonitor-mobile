@@ -12,12 +12,12 @@ const styles = StyleSheet.create({
   topBar: {
     paddingHorizontal: 40,
     paddingRight: 15,
-    alignItems: 'center',
+    alignItems: 'flex-end',
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#66B2B2',
-    paddingTop: 35,
-    paddingBottom: 15,
+    paddingTop: 15,
+    paddingBottom: 17,
   },
   header: {
     paddingHorizontal: 40,

@@ -31,7 +31,7 @@ export function Favorites() {
         contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 16 }}
       >
         {favorites.map((favorite: Teacher) => (
-          <TeacherItem key={favorite.id} teacher={favorite} favorited />
+          <TeacherItem key={favorite.user_id} teacher={favorite} favorited />
         ))}
       </ScrollView>
     </View>

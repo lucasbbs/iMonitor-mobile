@@ -13,9 +13,12 @@ interface User {
   user_id: string;
   email: string;
   name: string;
-  driver_license: string;
+  bio: string;
   avatar: string;
   token: string;
+  isMonitor: boolean;
+  classes: [];
+  whatsapp: string;
 }
 
 interface SignInCredentials {

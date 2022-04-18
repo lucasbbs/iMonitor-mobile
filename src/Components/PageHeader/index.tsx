@@ -31,7 +31,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
           <BackIcons width={30} />
         </TouchableOpacity>
         <Text style={styles.screenTitle}>{topTitle}</Text>
-        <Logo width={80} height={70} />
+        <Logo width={80} height={60} style={{ bottom: -22 }} />
       </View>
       {title && (
         <View style={styles.header}>
