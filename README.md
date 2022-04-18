@@ -18,7 +18,7 @@ Esse repositório consiste na api back-end do projeto iMonitor que permite ao pu
 
 # Outros Repositórios
 
-#### <a href="https://github.com/lucasbbs/iMonitor-mobile">App Mobile</a>
+#### <a href="https://github.com/lucasbbs/iMonitor-backend">App Backend</a>
 
 # :computer: Tecnologias utilizadas
 
@@ -29,9 +29,10 @@ Construido com :heart: usando as tecnologias:
 <div style="display: flex; flex-direction: 'row'; align-items: 'center';">
 <a href="https://www.typescriptlang.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40px"  /></a>
 <a href="https://nodejs.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40px" /></a>
-<a href="https://expressjs.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="40px" /></a>
-<a href="https://www.sqlite.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="40px" /></a>
-<a href="https://knexjs.org"><img src="https://raw.githubusercontent.com/lucasbbs/iMonitor-backend/c8685c2be2e8427a9fd7be24d68cdffa4286b4eb/knex-1.svg" width="40px" /></a>
+<a href="https://reactnative.dev
+"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40px" /></a>
+<a href="https://www.expo.dev/"><img src="https://inceptum-stor.icons8.com/TErRc1E6L9wX/expoicon.jpg" width="40px" /></a>
+
    </div>
 
 #### Deploy
