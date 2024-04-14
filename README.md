@@ -1,7 +1,4 @@
-<div background="black"><p align="center" >
-<img src="https://raw.githubusercontent.com/lucasbbs/iMonitor-backend/fa82741cef566db067831f00e4f4088f129415b0/Imonitor%20copy.svg"/>
-</p></div>
-
+![](https://raw.githubusercontent.com/lucasbbs/iMonitor-backend/fa82741cef566db067831f00e4f4088f129415b0/Imonitor%20copy.svg)
 
 ![Static Badge](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Static Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
