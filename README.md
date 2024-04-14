@@ -1,12 +1,10 @@
 <div background="black"><p align="center" >
 <img src="https://raw.githubusercontent.com/lucasbbs/iMonitor-backend/fa82741cef566db067831f00e4f4088f129415b0/Imonitor%20copy.svg"/>
 </p></div>
-<p>
-  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" />
-  <a href="./LICENSE">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
-  </a>
-</p>
+
+
+![Static Badge](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Static Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Esse repositório consiste na api back-end do projeto iMonitor que permite ao publico conhecer, consultar e encontar, monitores para receber aulas on-line, bem como se cadastrar para ser monitor.
 
@@ -90,7 +88,10 @@ Caso tudo dê certo, o resultado esperado é abrir um emulador do Android onde v
 
 Lucas Breno de Souza Noronha Braga
 
-<a href="https://api.whatsapp.com/send?phone=5561983499994" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a><a href="mailto:lucasbbs@live.fr" target="_blank"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" /></a><a href="https://github.com/lucasbbs/" target="_blank" ><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a><a href="https://linkedin.com/in/lucas-breno-noronha-braga/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+[![Static Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send?phone=12267247739)
+[![Static Badge](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:lucasbbs@live.fr)
+[![Static Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lucasbbs/)
+[![Static Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://github.com/lucasbbs/](https://linkedin.com/in/lucasbbs/))
 
 # :closed_book: License
 
