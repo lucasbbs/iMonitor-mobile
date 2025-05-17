@@ -25,13 +25,13 @@ Construido com :heart: usando as tecnologias:
 <a href="https://www.typescriptlang.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40px"  /></a>
 <a href="https://reactnative.dev
 "><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40px" /></a>
-<a href="https://www.expo.dev/"><img src="https://inceptum-stor.icons8.com/TErRc1E6L9wX/expoicon.jpg" width="40px" /></a>
+<a href="https://www.expo.dev/"><img src="https://avatars.githubusercontent.com/u/62702930" width="40px" /></a>
 
    </div>
 
 #### Deploy
 
-<a href="https://www.expo.dev/"><img src="https://inceptum-stor.icons8.com/TErRc1E6L9wX/expoicon.jpg" width="40px" /></a>
+<a href="https://www.expo.dev/"><img src="https://avatars.githubusercontent.com/u/62702930" width="40px" /></a>
 
 # :construction_worker: Rodando o projeto
 
